@@ -443,7 +443,8 @@ class FileMonitor:
                     # 将路径的开头盘符"/mnt/user/downloads"替换为"http://localhost:19798/static/http/localhost:19798/False/"
                     target_file = f"http://{cloud_url}/static/http/{cloud_url}/False/{target_file}"
                 elif str(cloud_type) == "alist":
-                    target_file = f"http://{cloud_url}/d/{target_file}"
+                    target_file = target_file
+                    # target_file = f"http://{cloud_url}/d/{target_file}"
                 else:
                     print_message(f"云盘类型 {cloud_type} 错误")
                     return

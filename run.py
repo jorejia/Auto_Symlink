@@ -24,7 +24,7 @@ def monitor_signal(file_path):
             process.terminate()
             process.wait()
             class_name = task_commands.get(method_name)
-            command = ["python", "task_run.py", class_name, method_name]
+            command = ["python3", "task_run.py", class_name, method_name]
             process = subprocess.Popen(command)
             processes[method_name] = process
             # 重启进程完成,重新接收重启信号
@@ -69,7 +69,7 @@ if __name__ == "__main__":
         "sync_new_list": "AutoSync",
     }
     for method_name, class_name in task_commands.items():
-        command = ["python", "task_run.py", class_name, method_name]
+        command = ["python3", "task_run.py", class_name, method_name]
         process = subprocess.Popen(command)
         processes[method_name] = process
         time.sleep(0.5)
